@@ -13,7 +13,7 @@
     "name": "Tic Tac Toe Game",
     "desc": "A classic Tic Tac Toe game built with a clean interface and smooth gameplay. Players take turns marking Xs and Os on a 3×3 grid, with the goal of aligning three in a row. The project demonstrates fundamental programming concepts such as game logic, condition checking, and user interaction.",
     "image": "travel-recommendation",
-    "category": "test",
+    "category": "Gaming",
     "links": {
       "view": "https://jhansinal1a.github.io/Tic-Tac-Toe-Game",
       "code": "https://github.com/jhansinal1a/Tic-Tac-Toe-Game"
@@ -23,7 +23,37 @@
     "name": "my-portfolio",
     "desc": "A showcase of my web development and machine learning projects, built to solve problems and spark ideas.",
     "image": "my-portfolio",
-    "category": "android",
+    "category": "web3",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
+      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+    }
+  },
+  {
+    "name": "Spam email detection using machine learning",
+    "desc": "Spam Email Detection using Machine Learning is a classification system that filters unwanted emails by analyzing text patterns and metadata. It applies natural language processing and trained models to distinguish legitimate messages from spam, improving inbox security and user experience.",
+    "image": "travel-recommendation",
+    "category": "Machine Learning",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
+      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+    }
+  },
+  {
+    "name": "Pattern Discovery in Alzheimer’s Disease",
+    "desc": "Pattern Discovery in Alzheimer’s Disease is a research project that applies data analysis and machine learning to uncover hidden trends in patient records, brain imaging, and cognitive assessments. By identifying these patterns, the study aims to improve early diagnosis, track disease progression, and support the development of more effective treatments.",
+    "image": "travel-recommendation",
+    "category": "Machine Learning",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
+      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+    }
+  },
+  {
+    "name": "Real time Anomaly Detection in streaming Transactions",
+    "desc": "Real-Time Anomaly Detection in Streaming Transactions is a system that continuously monitors financial transaction streams to identify unusual or suspicious patterns as they occur. By leveraging machine learning and statistical models, it flags anomalies instantly, helping prevent fraud and ensuring secure, reliable transaction processing.",
+    "image": "travel-recommendation",
+    "category": "Machine Learning",
     "links": {
       "view": "https://jhansinal1a.github.io/my-personal-portfolio",
       "code": "https://github.com/jhansinal1a/my-personal-portfolio"
