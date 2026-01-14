@@ -1,0 +1,32 @@
+[
+ {
+    "name": "Personalized_travel_planning",
+    "desc": "Personalized Travel Planning using Machine Learning is a smart recommendation system that analyzes user preferences, budget, and travel history to generate tailored itineraries.",
+    "image": "travel-recommendation",
+    "category": "Machine Learning",
+    "links": {
+      "view": "https://github.com/jhansinal1a/Personalized_travel_planning",
+      "code": "https://github.com/jhansinal1a/Personalized_travel_planning"
+    }
+  },
+  {
+    "name": "Tic Tac Toe Game",
+    "desc": "A classic Tic Tac Toe game built with a clean interface and smooth gameplay. Players take turns marking Xs and Os on a 3×3 grid, with the goal of aligning three in a row. The project demonstrates fundamental programming concepts such as game logic, condition checking, and user interaction.",
+    "image": "travel-recommendation",
+    "category": "test",
+    "links": {
+      "view": "https://jhansinal1a.github.io/Tic-Tac-Toe-Game",
+      "code": "https://github.com/jhansinal1a/Tic-Tac-Toe-Game"
+    }
+  },
+    {
+    "name": "my-portfolio",
+    "desc": "A showcase of my web development and machine learning projects, built to solve problems and spark ideas.",
+    "image": "my-portfolio",
+    "category": "android",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
+      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+    }
+  }
+]
