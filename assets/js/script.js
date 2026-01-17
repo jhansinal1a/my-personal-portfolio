@@ -39,9 +39,9 @@ $(document).ready(function () {
 
     // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDqxm");
+        emailjs.init("EpK4uPh-n7szwjtvj");
 
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+        emailjs.sendForm('jhansi-contact-form', 'jhansi-email-template', '#contact-form')
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
                 document.getElementById("contact-form").reset();
@@ -104,6 +104,8 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
+// Replace the showProjects function in your script.js file with this updated version
+
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
@@ -113,9 +115,9 @@ function showProjects(projects) {
       <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
-        <h3>${project.name}</h3>
+          <h3>${project.name}</h3>
         </div>
-        <div class="desc">
+        <div class="desc scrollable">
           <p>${project.desc}</p>
           <div class="btns">
             <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
@@ -143,7 +145,6 @@ function showProjects(projects) {
 
     /* SCROLL PROJECTS */
     srtop.reveal('.work .box', { interval: 200 });
-
 }
 
 fetchData().then(data => {

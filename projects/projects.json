@@ -1,7 +1,7 @@
 [
  {
-    "name": "Personalized_travel_planning",
-    "desc": "Personalized Travel Planning using Machine Learning is a smart recommendation system that analyzes user preferences, budget, and travel history to generate tailored itineraries.",
+    "name": "Personalized Travel Planning",
+    "desc": "A machine learning system that analyzes user preferences, budget, and travel history to generate personalized travel itineraries and recommendations. The project demonstrates recommendation algorithms, data analysis, and user preference modeling.",
     "image": "travel-recommendation",
     "category": "Machine Learning",
     "links": {
@@ -12,7 +12,7 @@
   {
     "name": "Tic Tac Toe Game",
     "desc": "A classic Tic Tac Toe game built with a clean interface and smooth gameplay. Players take turns marking Xs and Os on a 3×3 grid, with the goal of aligning three in a row. The project demonstrates fundamental programming concepts such as game logic, condition checking, and user interaction.",
-    "image": "travel-recommendation",
+    "image": "tic-tac-toe",
     "category": "Gaming",
     "links": {
       "view": "https://jhansinal1a.github.io/Tic-Tac-Toe-Game",
@@ -20,8 +20,8 @@
     }
   },
     {
-    "name": "my-portfolio",
-    "desc": "A showcase of my web development and machine learning projects, built to solve problems and spark ideas.",
+    "name": "My Personal Portfolio Website",
+    "desc": "A showcase of my web development and machine learning projects, built to solve problems and spark ideas.A classic Tic Tac Toe game built with a clean interface and smooth gameplay. Players take turns marking Xs and Os on a 3×3 grid, with the goal of aligning three in a row. The project demonstrates fundamental programming concepts such as game logic, condition checking, and user interaction.",
     "image": "my-portfolio",
     "category": "web3",
     "links": {
@@ -30,33 +30,33 @@
     }
   },
   {
-    "name": "Spam email detection using machine learning",
-    "desc": "Spam Email Detection using Machine Learning is a classification system that filters unwanted emails by analyzing text patterns and metadata. It applies natural language processing and trained models to distinguish legitimate messages from spam, improving inbox security and user experience.",
-    "image": "travel-recommendation",
+    "name": "Pattern Discovery in Alzheimer’s Disease",
+    "desc": "Pattern Discovery in Alzheimer’s Disease is a research project that applies data analysis and machine learning to uncover hidden trends in patient records, brain imaging, and cognitive assessments. By identifying these patterns, the study aims to improve early diagnosis, track disease progression, and support the development of more effective treatments.A classic Tic Tac Toe game built with a clean interface and smooth gameplay. Players take turns marking Xs and Os on a 3×3 grid, with the goal of aligning three in a row. The project demonstrates fundamental programming concepts such as game logic, condition checking, and user interaction.",
+    "image": "alzheimer-diagnosis",
     "category": "Machine Learning",
     "links": {
-      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
-      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+      "view": "https://github.com/jhansinal1a/alzheimer-diagnosis",
+      "code": "https://github.com/jhansinal1a/alzheimer-diagnosis"
     }
   },
   {
-    "name": "Pattern Discovery in Alzheimer’s Disease",
-    "desc": "Pattern Discovery in Alzheimer’s Disease is a research project that applies data analysis and machine learning to uncover hidden trends in patient records, brain imaging, and cognitive assessments. By identifying these patterns, the study aims to improve early diagnosis, track disease progression, and support the development of more effective treatments.",
-    "image": "travel-recommendation",
+    "name": "Spam Email Detection",
+    "desc": "Spam Email Detection is a machine learning project designed to identify and filter out spam emails from users' inboxes. By utilizing natural language processing and classification algorithms, the system analyzes email content and metadata to distinguish between legitimate messages and spam. This project showcases techniques in data preprocessing, feature extraction, and model evaluation to enhance email security and user experience.",
+    "image": "spam-email",
     "category": "Machine Learning",
     "links": {
-      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
-      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+      "view": "https://github.com/jhansinal1a/spam-email-detection",
+      "code": "https://github.com/jhansinal1a/spam-email-detection"
     }
   },
   {
     "name": "Real time Anomaly Detection in streaming Transactions",
-    "desc": "Real-Time Anomaly Detection in Streaming Transactions is a system that continuously monitors financial transaction streams to identify unusual or suspicious patterns as they occur. By leveraging machine learning and statistical models, it flags anomalies instantly, helping prevent fraud and ensuring secure, reliable transaction processing.",
-    "image": "travel-recommendation",
+    "desc": "A real-time anomaly detection system for streaming financial transactions that identifies suspicious patterns instantly. Using machine learning and statistical models, it flags fraudulent activities as they occur, enabling rapid response to threats. The project demonstrates stream processing, anomaly detection algorithms, and real-time data analysis techniques.",
+    "image": "real-time-anomaly-detection",
     "category": "Machine Learning",
     "links": {
-      "view": "https://jhansinal1a.github.io/my-personal-portfolio",
-      "code": "https://github.com/jhansinal1a/my-personal-portfolio"
+      "view": "https://github.com/jhansinal1a/Data-streaming-pipeline",
+      "code": "https://github.com/jhansinal1a/Data-streaming-pipeline"
     }
   }
 ]

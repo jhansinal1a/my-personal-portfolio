@@ -8,7 +8,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
+  text-transform: none;
   transition: all 0.2s linear;
 }
 html {
@@ -86,9 +86,16 @@ section {
 .heading span {
   color: rgb(115, 3, 167);
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 header .logo {
   display: flex;
-  font-size: 1.9rem;
+  align-items: center;
+  font-size: 2.2rem;
   font-weight: 900;
   text-decoration: none;
   color: #0e2431;
@@ -102,8 +109,8 @@ header .logo i {
 .logo img {
   height: 40px;              
   width: auto;               
-  margin-right: 8px;
-  margin-top: 0;         
+  margin-right: 0.5rem;
+  margin-top: 0;
 }
 
 header .logo:hover {
@@ -654,35 +661,40 @@ header .navbar ul li a:hover {
 
 /* work section starts */
 .work {
-  /* background: #010124; */
   background: linear-gradient(to bottom, #000031, #00002c);
 }
+
 .work h2 {
   color: #fff;
   padding: 1rem;
 }
+
 .work .heading span {
   color: rgb(255, 230, 0);
 }
+
 .work .box-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin: 2rem;
 }
+
 .work .box-container .box {
   flex: 1 1 30rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  height: 30rem;
+  height: 35rem; /* Adjust the height of the box */
 }
+
 .work .box-container .box img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image covers the entire area of the box */
 }
+
 .work .box-container .box .content {
   height: 100%;
   width: 100%;
@@ -692,7 +704,10 @@ header .navbar ul li a:hover {
   background: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  overflow: hidden; /* Prevent content overflow */
 }
+
 .work .box-container .box .content .tag {
   display: flex;
   flex-direction: row;
@@ -701,29 +716,40 @@ header .navbar ul li a:hover {
   height: 4.5rem;
   width: 100%;
   padding-left: 1rem;
-  background: #ffd900;
+  background: #1334ca;
 }
+
 .work .box-container .box .content .tag h3 {
   font-size: 2rem;
 }
+
 .work .box-container .box:hover .content {
   top: 25%;
 }
+
 .work .desc {
   margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-height: 12rem;  /* Adjust the height for the description */
+  overflow-y: auto;  /* Enable scrolling if content overflows */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Smooth scroll */
 }
+
 .work .desc p {
   font-size: 1.5rem;
+  line-height: 1.6;  /* Improved line height for better readability */
 }
+
 .work .desc .btns {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 2rem;
 }
+
 .work .desc .btns .btn {
   line-height: 0;
   display: inline;
@@ -734,42 +760,26 @@ header .navbar ul li a:hover {
   background: rgb(12, 12, 12);
   margin-right: 2rem;
 }
+
 .work .desc .btns .btn:hover {
   background: #310ae0f5;
 }
-.work .viewall {
-  display: flex;
-  justify-content: center;
+
+/* Custom scrollbar styling */
+.work .desc::-webkit-scrollbar {
+  width: 8px;
 }
-.work .viewall .btn {
-  position: relative;
-  line-height: 0;
-  padding: 1.6rem 3rem;
-  border-radius: 0.5em;
-  transition: 0.5s;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  border: 2px solid #fff;
-  box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
-  text-align: center;
+
+.work .desc::-webkit-scrollbar-thumb {
+  background: #ffd900; /* Scrollbar thumb color */
+  border-radius: 10px;
 }
-.work .viewall .btn span {
-  font-weight: 600;
-  font-size: 1.7rem;
-  font-family: "Nunito", sans-serif;
+
+.work .desc::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Background of the scrollbar track */
+  border-radius: 10px;
 }
-.work .viewall .btn i {
-  margin-left: 0.3rem;
-  font-size: 1.5rem;
-  transition: 0.3s;
-}
-.work .viewall .btn:hover {
-  background: #fff;
-  color: #000;
-}
-.work .viewall .btn:hover i {
-  transform: translateX(5px);
-}
+
 /* work section ends */
 
 /* experience section starts */
@@ -1236,3 +1246,252 @@ form .button-area {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* Styling the scrollbar for webkit browsers (Chrome, Safari, Edge) */
+.work .desc::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.work .desc::-webkit-scrollbar-thumb {
+  background: #ffd900; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.work .desc::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Complete CSS fix for project cards - Add to your style.css */
+
+.work .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.work .box-container .box {
+  position: relative;
+  overflow: visible;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  height: 250px; /* Fixed height for consistency */
+}
+
+.work .box-container .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.work .box-container .box .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 1rem;
+  z-index: 10;
+}
+
+.work .box-container .box:hover .content {
+  opacity: 1;
+  /* Expand upward and slightly larger */
+  top: -10%;
+  transform: translate(-50%, -10%) scale(1.08);
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
+  height: auto;
+  min-height: 120%;
+  max-height: 500px;
+}
+
+/* Project Title Styling */
+.work .box-container .box .content .tag {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+.work .box-container .box .content .tag h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  display: block;
+  opacity: 1;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding: 0 0.5rem;
+}
+
+/* Project Description Styling */
+.work .box-container .box .content .desc {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.work .box-container .box .content .desc.scrollable {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.work .box-container .box .content .desc p {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: block;
+  opacity: 1;
+  flex: 1;
+}
+
+/* Buttons Styling */
+.work .box-container .box .content .desc .btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.work .box-container .box .content .desc .btns .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.3rem;
+  background: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.work .box-container .box .content .desc .btns .btn:hover {
+  background: #f39c12;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Custom scrollbar */
+.work .box-container .box .content .desc.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.work .box-container .box .content .desc.scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.work .box-container .box .content .desc.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.work .box-container .box .content .desc.scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure proper spacing between cards */
+.work .box-container .box:hover {
+  z-index: 100;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .work .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .work .box-container .box:hover .content {
+    top: -5%;
+    transform: translate(-50%, -5%) scale(1.05);
+    min-height: 115%;
+  }
+}
+
+@media (max-width: 768px) {
+  .work .box-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .work .box-container .box {
+    height: 220px;
+  }
+  
+  .work .box-container .box .content .tag h3 {
+    font-size: 1.6rem;
+  }
+  
+  .work .box-container .box .content .desc p {
+    font-size: 1.2rem;
+  }
+  
+  .work .box-container .box .content .desc .btns .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .work .box-container .box:hover .content {
+    top: -8%;
+    transform: translate(-50%, -8%) scale(1.03);
+    min-height: 115%;
+    max-height: 450px;
+  }
+  
+  .work .box-container .box .content .desc.scrollable {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 450px) {
+  .work .box-container .box .content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .work .box-container .box .content .tag h3 {
+    font-size: 1.4rem;
+  }
+  
+  .work .box-container .box .content .desc p {
+    font-size: 1.1rem;
+  }
+  
+  .work .box-container .box .content .desc .btns {
+    gap: 0.8rem;
+  }
+  
+  .work .box-container .box .content .desc .btns .btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 1.1rem;
+  }
+}
