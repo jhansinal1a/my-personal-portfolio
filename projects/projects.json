@@ -35,7 +35,7 @@
     "image": "alzheimer-diagnosis",
     "category": "Machine Learning",
     "links": {
-      "view": "https://github.com/jhansinal1a/alzheimer-diagnosis",
+      "view": "https://colab.research.google.com/drive/1w-d-nVkWw8DzWHXPYp_nrXdE23e7z37_?usp=sharing",
       "code": "https://github.com/jhansinal1a/alzheimer-diagnosis"
     }
   },
@@ -45,7 +45,7 @@
     "image": "spam-email",
     "category": "Machine Learning",
     "links": {
-      "view": "https://github.com/jhansinal1a/spam-email-detection",
+      "view": "https://colab.research.google.com/drive/1GMtN6AcojUHIOkmyQUX6Px3MHh_kjL-A?usp=sharing",
       "code": "https://github.com/jhansinal1a/spam-email-detection"
     }
   },
