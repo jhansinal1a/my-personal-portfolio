@@ -1,0 +1,34 @@
+[
+ {
+    "name": "IBM Skills Salesforce developer virtual internship",
+    "desc":"Course completion Certificate for completing the Courses Python, Artificial Intelligence, Automated Software Testing, Full Stack, Web Development.",
+    "image": "ibm-internship",
+    "links": {
+      "view": "https://github.com/jhansinal1a/Personalized_travel_planning"
+    }
+  },
+  {
+    "name": "AI/ML with Python",
+    "desc": "Course completion Certificate for completing the Courses Python, Artificial Intelligence, Automated Software Testing, Full Stack, Web Development.",
+    "image": "ai-ml",
+    "links": {
+      "view": "https://jhansinal1a.github.io/Tic-Tac-Toe-Game"
+    }
+  },
+    {
+    "name": "Fundamentals of Agile with DevOps Integration",
+    "desc": "Got a Badge from Microsoft MTA in Software Development Fundamentals 2022, Azure Data Science and Skillsoft in Automated Software Testing.",
+    "image": "azure-devops",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio"
+    }
+  },
+    {
+    "name": "Microsoft-fundamentals",
+    "desc": "Got a Badge from Microsoft MTA in Software Development Fundamentals 2022, Azure Data Science and Skillsoft in Automated Software Testing.",
+    "image": "microsoft-fundamentals",
+    "links": {
+      "view": "https://jhansinal1a.github.io/my-personal-portfolio"
+    }
+  }
+]
