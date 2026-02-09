@@ -81,10 +81,14 @@ var typed = new Typed(".typing-text", {
 
 async function fetchData(type = "skills") {
     let response
-    type === "skills" ?
+    if (type === "skills" )
         response = await fetch("./skills.json")
-        :
-        response = await fetch("./projects/projects.json")
+    else if(type === "projects")
+        response = await fetch("./data/projects.json")
+    else if(type === "certifications")
+        response = await fetch("./data/certifications.json")
+    else if(type === "awards")
+            response = await fetch("./data/awards.json"); 
     const data = await response.json();
     return data;
 }
@@ -147,6 +151,126 @@ function showProjects(projects) {
     srtop.reveal('.work .box', { interval: 200 });
 }
 
+function showCertifications(certifications) {
+    let certificationsContainer = document.querySelector("#certifications .box-container");
+    let certificationHTML = "";
+    
+    console.log('Loading certifications:', certifications);
+    
+    certifications.slice(0, 10).forEach(certification => {
+        certificationHTML += `
+        <div class="box tilt">
+            <img draggable="false" src="./assets/images/certifications/${certification.image}.png" alt="${certification.name}" />
+            <div class="content">
+                <div class="tag">
+                    <h3>${certification.name}</h3>
+                </div>
+                <div class="desc scrollable">
+                    <p>${certification.desc}</p>
+                    <div class="btns">
+                        <a href="${certification.links.view}" class="btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    });
+    
+    certificationsContainer.innerHTML = certificationHTML;
+
+    // Initialize VanillaTilt for smooth tilt effect
+    VanillaTilt.init(document.querySelectorAll(".certifications .box.tilt"), {
+        max: 8,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+    });
+
+    // Initialize ScrollReveal for certifications
+    const srtop = ScrollReveal({
+        origin: 'bottom',
+        distance: '60px',
+        duration: 1000,
+        delay: 200,
+        reset: true
+    });
+
+    // Reveal certification boxes with stagger effect
+    srtop.reveal('.certifications .box', { 
+        interval: 200,
+        scale: 0.9
+    });
+}
+
+function showAwards(awards) {
+    let awardsContainer = document.querySelector(".awards-container");
+    let awardHTML = "";
+    
+    console.log('Loading awards:', awards);
+    
+    awards.forEach((award, index) => {
+        awardHTML += `
+        <div class="award-card">
+            <span class="star-decoration">★</span>
+            <span class="star-decoration">★</span>
+            <span class="star-decoration">★</span>
+            
+            <div class="award-rank">#${index + 1}</div>
+            
+            <div class="award-image">
+                <img src="./assets/images/awards/${award.image}.png" alt="${award.title}" draggable="false" />
+            </div>
+            
+            <div class="award-content">
+                <div class="award-trophy">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                
+                <h3 class="award-title">${award.title}</h3>
+                <p class="award-organization">${award.organization}</p>
+                <span class="award-date">
+                    <i class="far fa-calendar-alt"></i> ${award.date}
+                </span>
+                <p class="award-description">${award.description}</p>
+                
+                ${award.tags ? `
+                <div class="award-tags">
+                    ${award.tags.map(tag => `<span class="award-tag">${tag}</span>`).join('')}
+                </div>
+                ` : ''}
+            </div>
+        </div>`;
+    });
+    
+    awardsContainer.innerHTML = awardHTML;
+
+    // Initialize ScrollReveal for awards
+    const srtop = ScrollReveal({
+        origin: 'bottom',
+        distance: '80px',
+        duration: 1200,
+        delay: 100,
+        reset: true
+    });
+
+    // Reveal award cards with stagger effect
+    srtop.reveal('.award-card', { 
+        interval: 300,
+        scale: 0.85
+    });
+}
+
+// Add to your existing fetchData and initialization code
+fetchData("awards").then(data => {
+    showAwards(data);
+});
+
+// Add to your existing fetchData and initialization code
+fetchData("awards").then(data => {
+    showAwards(data);
+});
+
 fetchData().then(data => {
     showSkills(data);
 });
@@ -154,6 +278,17 @@ fetchData().then(data => {
 fetchData("projects").then(data => {
     showProjects(data);
 });
+
+fetchData("certifications").then(data => {
+    showCertifications(data);
+});
+
+fetchData("awards").then(data => {
+    showAwards(data);
+});
+
+/* SCROLL AWARDS */
+srtop.reveal('.award-card', { interval: 300 });
 
 // <!-- tilt js effect starts -->
 VanillaTilt.init(document.querySelectorAll(".tilt"), {

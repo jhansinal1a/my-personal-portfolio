@@ -782,6 +782,326 @@ header .navbar ul li a:hover {
 
 /* work section ends */
 
+/* certifications section starts - IMPROVED HOVER EFFECT */
+.certifications {
+  background: linear-gradient(to bottom, #6464e998, #0b0b19af);
+  padding: 4rem 2rem;
+}
+
+.certifications h2 {
+  color: #fff;
+  padding: 1rem;
+}
+
+.certifications .heading span {
+  color: rgb(255, 230, 0);
+}
+
+.certifications .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.certifications .box-container .box {
+  flex: 0 0 calc(50% - 1rem);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  height: 35rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.certifications .box-container .box:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 1.5rem 3rem rgba(255, 230, 0, 0.3);
+}
+
+.certifications .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.certifications .box-container .box:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.6);
+}
+
+/* Content overlay - initially hidden at bottom */
+.certifications .box-container .box .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to top, rgba(19, 52, 202, 0.98), rgba(19, 52, 202, 0.95));
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  transform: translateY(calc(100% - 7rem));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.certifications .box-container .box:hover .content {
+  transform: translateY(0);
+  box-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+/* Title section - always visible */
+.certifications .box-container .box .content .tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 7rem;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #1e3a8a, #1334ca);
+  border-bottom: 3px solid rgb(255, 230, 0);
+  position: relative;
+}
+
+.certifications .box-container .box .content .tag::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid rgb(255, 230, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.certifications .box-container .box:hover .content .tag::after {
+  opacity: 1;
+}
+
+.certifications .box-container .box .content .tag h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+}
+
+/* Description section - slides up on hover */
+.certifications .desc {
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 25rem;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.4s ease 0.2s;
+}
+
+.certifications .box-container .box:hover .desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certifications .desc p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Buttons section */
+.certifications .desc .btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.certifications .desc .btns .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1334ca;
+  background: rgb(255, 230, 0);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.certifications .desc .btns .btn:hover {
+  background: #fff;
+  color: #1334ca;
+  transform: translateY(-0.3rem) scale(1.05);
+  box-shadow: 0 0.8rem 1.5rem rgba(255, 230, 0, 0.4);
+  border-color: rgb(255, 230, 0);
+}
+
+.certifications .desc .btns .btn i {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+
+.certifications .desc .btns .btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Custom scrollbar styling */
+.certifications .desc::-webkit-scrollbar {
+  width: 8px;
+}
+
+.certifications .desc::-webkit-scrollbar-thumb {
+  background: rgb(255, 230, 0);
+  border-radius: 10px;
+}
+
+.certifications .desc::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 240, 100);
+}
+
+.certifications .desc::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Add a certificate badge icon */
+.certifications .box-container .box::before {
+  content: '\f0a3';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  color: rgb(255, 230, 0);
+  z-index: 10;
+  opacity: 0;
+  transform: rotate(-15deg) scale(0);
+  transition: all 0.4s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.certifications .box-container .box:hover::before {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .certifications .box-container .box {
+    flex: 0 0 calc(50% - 1rem);
+    height: 32rem;
+  }
+
+  .certifications .box-container .box .content .tag h3 {
+    font-size: 1.8rem;
+  }
+
+  .certifications .desc p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications .box-container {
+    gap: 1.5rem;
+  }
+
+  .certifications .box-container .box {
+    flex: 0 0 100%;
+    height: 30rem;
+  }
+
+  .certifications .box-container .box .content .tag h3 {
+    font-size: 1.6rem;
+  }
+
+  .certifications .desc {
+    padding: 1.5rem;
+    max-height: 20rem;
+  }
+
+  .certifications .desc p {
+    font-size: 1.2rem;
+  }
+
+  .certifications .desc .btns .btn {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .certifications {
+    padding: 2rem 1rem;
+  }
+
+  .certifications .box-container {
+    margin: 1rem 0;
+  }
+
+  .certifications .box-container .box {
+    height: 28rem;
+  }
+
+  .certifications .box-container .box .content .tag {
+    min-height: 6rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .certifications .box-container .box .content .tag h3 {
+    font-size: 1.4rem;
+  }
+
+  .certifications .desc {
+    padding: 1rem;
+  }
+
+  .certifications .desc p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .certifications .desc .btns {
+    gap: 1rem;
+  }
+
+  .certifications .desc .btns .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* certifications section ends */
+
+
+
 /* experience section starts */
 .experience .timeline {
   position: relative;
@@ -953,6 +1273,457 @@ header .navbar ul li a:hover {
 /* experience media queries ends */
 /* experience section ends */
 
+/* awards section starts */
+.awards {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 80vh;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.awards::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 40rem;
+  height: 40rem;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.awards::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+.awards h2 {
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.awards .heading span {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.awards-quote {
+  text-align: center;
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  font-family: "Nunito", sans-serif;
+  margin: 1rem 0 3rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.awards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.award-card {
+  flex: 0 0 calc(33.333% - 2rem);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 2rem;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  min-height: 45rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  clip-path: circle(0% at 50% 0%);
+  transition: clip-path 0.6s ease-in-out;
+  z-index: -1;
+}
+
+.award-card:hover::before {
+  clip-path: circle(150% at 50% 0%);
+}
+
+.award-card:hover {
+  transform: translateY(-1.5rem) scale(1.02);
+  box-shadow: 0 2rem 4rem rgba(255, 215, 0, 0.4);
+}
+
+/* Award Image Container */
+.award-image {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.award-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: brightness(0.9);
+}
+
+.award-card:hover .award-image img {
+  transform: scale(1.15);
+  filter: brightness(1) saturate(1.2);
+}
+
+/* Image overlay gradient */
+.award-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(102, 126, 234, 0.6), transparent);
+  transition: opacity 0.3s ease;
+}
+
+.award-card:hover .award-image::after {
+  opacity: 0.3;
+}
+
+/* Trophy icon at top */
+.award-trophy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1.5rem 0;
+  position: relative;
+}
+
+.award-trophy i {
+  font-size: 5rem;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0.5rem 1rem rgba(255, 215, 0, 0.3));
+  transition: all 0.4s ease;
+  animation: trophy-shine 3s ease-in-out infinite;
+}
+
+@keyframes trophy-shine {
+  0%, 100% {
+    filter: drop-shadow(0 0.5rem 1rem rgba(255, 215, 0, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0.8rem 2rem rgba(255, 215, 0, 0.6));
+  }
+}
+
+.award-card:hover .award-trophy i {
+  transform: scale(1.2) rotateY(360deg);
+  -webkit-text-fill-color: #fff;
+}
+
+/* Award rank badge */
+.award-rank {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 0.5rem 1.5rem rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.award-card:hover .award-rank {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #764ba2;
+  transform: rotate(360deg);
+}
+
+/* Award content */
+.award-content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.award-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.award-card:hover .award-title {
+  color: #764ba2;
+}
+
+.award-organization {
+  font-size: 1.6rem;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.award-card:hover .award-organization {
+  color: #fff;
+}
+
+.award-date {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.3rem 1rem rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.award-card:hover .award-date {
+  background: #fff;
+  color: #764ba2;
+  box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.3);
+}
+
+.award-description {
+  font-size: 1.5rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  flex: 1;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.award-card:hover .award-description {
+  color: #2d3748;
+}
+
+/* Award tags/categories */
+.award-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.award-tag {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.award-card:hover .award-tag {
+  background: rgba(255, 255, 255, 0.3);
+  color: #764ba2;
+  border-color: #764ba2;
+}
+
+/* Decorative elements */
+.award-card .star-decoration {
+  position: absolute;
+  font-size: 2rem;
+  color: #ffd700;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.award-card .star-decoration:nth-child(1) {
+  top: 2rem;
+  left: 2rem;
+}
+
+.award-card .star-decoration:nth-child(2) {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.award-card .star-decoration:nth-child(3) {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.award-card:hover .star-decoration {
+  opacity: 1;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .award-card {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .awards {
+    padding: 3rem 1rem;
+  }
+
+  .awards-container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .award-card {
+    flex: 0 0 100%;
+    min-height: 40rem;
+  }
+
+  .award-image {
+    height: 18rem;
+  }
+
+  .award-trophy i {
+    font-size: 4.5rem;
+  }
+
+  .award-rank {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+  }
+
+  .award-title {
+    font-size: 2rem;
+  }
+
+  .award-organization {
+    font-size: 1.5rem;
+  }
+
+  .award-description {
+    font-size: 1.4rem;
+  }
+
+  .award-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .awards-quote {
+    font-size: 1.5rem;
+  }
+
+  .award-card {
+    min-height: 38rem;
+  }
+
+  .award-image {
+    height: 16rem;
+  }
+
+  .award-trophy i {
+    font-size: 4rem;
+  }
+
+  .award-rank {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .award-title {
+    font-size: 1.8rem;
+  }
+
+  .award-organization {
+    font-size: 1.4rem;
+  }
+
+  .award-date {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .award-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  .award-tag {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .award-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+/* awards section ends */
 /* contact section starts */
 .contact {
   background: #e5ecfb;
