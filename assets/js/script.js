@@ -210,8 +210,26 @@ function showAwards(awards) {
     console.log('Loading awards:', awards);
     
     awards.forEach((award, index) => {
+        // Create slides HTML for multiple images
+        let slidesHTML = '';
+        if (award.images && Array.isArray(award.images)) {
+            slidesHTML = award.images.map((img, imgIndex) => `
+                <div class="award-slide ${imgIndex === 0 ? 'active' : ''}">
+                    <img src="./assets/images/awards/${img}.png" alt="${award.title} - Image ${imgIndex + 1}" draggable="false" />
+                </div>
+            `).join('');
+        }
+
+        // Create carousel indicators/dots
+        let dotsHTML = '';
+        if (award.images && award.images.length > 1) {
+            dotsHTML = award.images.map((_, dotIndex) => `
+                <span class="carousel-dot ${dotIndex === 0 ? 'active' : ''}" data-slide="${dotIndex}"></span>
+            `).join('');
+        }
+
         awardHTML += `
-        <div class="award-card">
+        <div class="award-card" data-award-index="${index}">
             <span class="star-decoration">★</span>
             <span class="star-decoration">★</span>
             <span class="star-decoration">★</span>
@@ -219,7 +237,28 @@ function showAwards(awards) {
             <div class="award-rank">#${index + 1}</div>
             
             <div class="award-image">
-                <img src="./assets/images/awards/${award.image}.png" alt="${award.title}" draggable="false" />
+                <div class="award-image-slider">
+                    <div class="award-slides">
+                        ${slidesHTML}
+                    </div>
+                </div>
+                
+                ${award.images && award.images.length > 1 ? `
+                    <button class="carousel-arrow prev" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-arrow next" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <button class="carousel-pause" aria-label="Pause slideshow">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    
+                    <div class="carousel-indicators">
+                        ${dotsHTML}
+                    </div>
+                ` : ''}
             </div>
             
             <div class="award-content">
@@ -245,6 +284,9 @@ function showAwards(awards) {
     
     awardsContainer.innerHTML = awardHTML;
 
+    // Initialize carousel functionality for each award card
+    initializeAwardCarousels();
+
     // Initialize ScrollReveal for awards
     const srtop = ScrollReveal({
         origin: 'bottom',
@@ -258,6 +300,144 @@ function showAwards(awards) {
     srtop.reveal('.award-card', { 
         interval: 300,
         scale: 0.85
+    });
+}
+
+function initializeAwardCarousels() {
+    const awardCards = document.querySelectorAll('.award-card');
+    
+    awardCards.forEach((card, cardIndex) => {
+        const slides = card.querySelectorAll('.award-slide');
+        const prevBtn = card.querySelector('.carousel-arrow.prev');
+        const nextBtn = card.querySelector('.carousel-arrow.next');
+        const dots = card.querySelectorAll('.carousel-dot');
+        const pauseBtn = card.querySelector('.carousel-pause');
+        const slidesContainer = card.querySelector('.award-slides');
+        
+        if (!slides || slides.length <= 1) return; // Skip if only one image
+        
+        let currentSlide = 0;
+        let autoPlayInterval;
+        let isPlaying = true;
+        const autoPlayDelay = 4000; // 4 seconds delay
+        
+        function goToSlide(slideIndex) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current slide and dot
+            slides[slideIndex].classList.add('active');
+            if (dots[slideIndex]) {
+                dots[slideIndex].classList.add('active');
+            }
+            
+            // Update transform
+            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+            currentSlide = slideIndex;
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            goToSlide(next);
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prev);
+        }
+        
+        function startAutoPlay() {
+            stopAutoPlay(); // Clear any existing interval
+            isPlaying = true;
+            if (pauseBtn) {
+                pauseBtn.querySelector('i').classList.remove('fa-play');
+                pauseBtn.querySelector('i').classList.add('fa-pause');
+            }
+            autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+        }
+        
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+            isPlaying = false;
+            if (pauseBtn) {
+                pauseBtn.querySelector('i').classList.remove('fa-pause');
+                pauseBtn.querySelector('i').classList.add('fa-play');
+            }
+        }
+        
+        function toggleAutoPlay() {
+            if (isPlaying) {
+                stopAutoPlay();
+            } else {
+                startAutoPlay();
+            }
+        }
+        
+        // Event listeners for navigation arrows
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                prevSlide();
+                stopAutoPlay(); // Stop auto-play when manually navigating
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                nextSlide();
+                stopAutoPlay(); // Stop auto-play when manually navigating
+            });
+        }
+        
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToSlide(index);
+                stopAutoPlay(); // Stop auto-play when manually navigating
+            });
+        });
+        
+        // Event listener for pause button
+        if (pauseBtn) {
+            pauseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleAutoPlay();
+            });
+        }
+        
+        // Pause auto-play when hovering over the card
+        card.addEventListener('mouseenter', () => {
+            if (isPlaying) {
+                stopAutoPlay();
+            }
+        });
+        
+        // Resume auto-play when mouse leaves (only if it was playing before)
+        card.addEventListener('mouseleave', () => {
+            if (!isPlaying) {
+                startAutoPlay();
+            }
+        });
+        
+        // Start auto-play initially
+        startAutoPlay();
+        
+        // Keyboard navigation
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                stopAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                stopAutoPlay();
+            }
+        });
     });
 }
 

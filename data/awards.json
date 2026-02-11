@@ -1,26 +1,10 @@
 [
     {
-        "title": "Best Research Paper Award",
-        "organization": "International Conference on AI 2024",
-        "date": "March 2024",
-        "description": "Received the Best Research Paper Award for innovative work in Machine Learning algorithms and their real-world applications in healthcare.",
-        "image": "award1",
-        "tags": ["Research", "AI", "Innovation"]
-    },
-    {
-        "title": "Outstanding Student Achievement",
+        "title": "Outstanding Achievement Award",
         "organization": "Grand Valley State University",
         "date": "December 2024",
-        "description": "Recognized for exceptional academic performance and contributions to the computer science department through various projects and initiatives.",
-        "image": "award2",
-        "tags": ["Academic", "Leadership"]
-    },
-    {
-        "title": "Hackathon Winner",
-        "organization": "TechFest 2023",
-        "date": "September 2023",
-        "description": "First place winner in 24-hour hackathon for developing an innovative UI/UX solution that improved user engagement by 150%.",
-        "image": "award3",
-        "tags": ["Competition", "Development", "UI/UX"]
+        "description": "I received the Student Prototype Designer Award for the Talent-Connect concept, developed in collaboration with my coworkers at REP4 Chicago and supported by the creative environment at the Illinois Institute of Technology. This project reflects my passion for user-centered design, rapid prototyping, and collaborative innovation.",
+        "images": ["award1","award4", "award2", "award3"],
+        "tags": ["Academic Excellence", "Leadership", "Innovation", "Research"]
     }
 ]
