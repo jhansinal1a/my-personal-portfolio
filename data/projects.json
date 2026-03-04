@@ -66,7 +66,17 @@
     "category": "Machine Learning",
     "links": {
       "view": "https://smart-hire-now.base44.app/",
-      "code": "https://github.com/jhansinal1a/"
+      "code": "Platform: Base44"
+    }
+  },
+  {
+    "name": "World Rotater",
+    "desc": "I developed an AI-based world rotator that lets you rotate the globe using real-time hand gestures. Please grant camera access to enable gesture detection",
+    "image": "world-rotator",
+    "category": "Artificial Intelligence",
+    "links": {
+      "view": "https://globe-hand-spin.base44.app",
+      "code": "Platform: Base44"
     }
   }
 ]
